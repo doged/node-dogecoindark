@@ -1,11 +1,11 @@
 {
-    "name": "node-dogecoin",
+    "name": "node-dogecoindark",
     "version": "0.3.9",
-    "description": "DogeCoin client",
-    "keywords": ["dogecoin"],
-    "repository": "git://github.com/countable/node-dogecoin.git",
-    "author": "Clark Van Oyen <clark@countable.ca>",
-    "main": "lib/dogecoin.js",
+    "description": "DogeCoinDark client",
+    "keywords": ["dogecoindark"],
+    "repository": "git://github.com/doged/node-dogecoindark.git",
+    "author": "sunerok <sunerok@goldmin.es>",
+    "main": "lib/dogecoindark.js",
     "engines": { "node": ">= 0.4.0" },
     "devDependencies": {
         "nodeunit": "*"
