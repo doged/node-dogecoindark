@@ -1,6 +1,6 @@
 # A Node.js DogeCoinDark Client!
 
-![DogeCoin](https://raw2.github.com/doged/node-dogecoindark/master/node-dogecoindark.png)
+![DogeCoin](https://github.com/doged/node-dogecoindark/master/node-dogecoindark.png)
 
 node-dogecoindark is a DogecoinDark client for Node.js. It is a fork of the excellent Kapitalize Bitcoin Client (now removed from GitHub) intended for use with DogecoinDark. The purpose of this repository is:
 
