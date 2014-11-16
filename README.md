@@ -11,18 +11,18 @@ node-dogecoindark is a DogecoinDark client for Node.js. It is a fork of the exce
 
 ## Dependencies
 
-You'll need a running instance of [dogecoindarkd](https://github.com/doged/dogedsource) to connect with. If you're running Debian/Ubuntu, this worked for me: http://www.dogeco.in/wiki/index.php/Dogecoind
+You'll need a running instance of [dogecoindarkd](https://github.com/doged/dogedsource) to connect with.
 
-Then, install the node-dogecoin NPM package.
+Then, install the node-dogecoindark NPM package.
 
 `npm install node-dogecoindark`
 
 ## Examples
 
-Some code examples follow below, but for more complete examples, see [these snippets](https://github.com/brotchie/dogecoin-code-snippets), or this [wallet app](https://github.com/countable/dogelet) which was created to to test this module.
+Some code examples follow below, but for more complete examples, see [these snippets](https://github.com/brotchie/dogecoin-code-snippets).
 
 ```js
-var dogecoin = require('node-dogecoindark')()
+var dogecoindark = require('node-dogecoindark')()
 
 dogecoindark.auth('myusername', 'mypassword')
 
