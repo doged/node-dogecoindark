@@ -1,32 +1,32 @@
-# A Node.js DogeCoin Client!
+# A Node.js DogeCoinDark Client!
 
 ![DogeCoin](https://raw2.github.com/countable/node-dogecoin/master/node-dogecoin.png)
 
-node-dogecoin is a Dogecoin client for Node.js. It is a fork of the excellent Kapitalize Bitcoin Client (now removed from GitHub) intended for use with Dogecoin. The purpose of this repository is:
+node-dogecoindark is a DogecoinDark client for Node.js. It is a fork of the excellent Kapitalize Bitcoin Client (now removed from GitHub) intended for use with DogecoinDark. The purpose of this repository is:
 
-* Provide a one-stop resource for the Node.js developer to get started with Dogecoin integration.
-* Prevent would-be Dogecoin web developers worrying whether a Bitcoin client will work out of the box.
-* Promote Node.js development of Dogecoin web apps.
-* Identify and address any incompatibilities with the Dogecoin and Bitcoin APIs that exist now and/or in the future.
+* Provide a one-stop resource for the Node.js developer to get started with DogecoinDark integration.
+* Prevent would-be DogecoinDark web developers worrying whether a Bitcoin client will work out of the box.
+* Promote Node.js development of DogecoinDark web apps.
+* Identify and address any incompatibilities with the DogecoinDark and Bitcoin APIs that exist now and/or in the future.
 
 ## Dependencies
 
-You'll need a running instance of [dogecoind](https://github.com/dogecoin/dogecoin) to connect with. If you're running Debian/Ubuntu, this worked for me: http://www.dogeco.in/wiki/index.php/Dogecoind
+You'll need a running instance of [dogecoindarkd](https://github.com/doged/dogedsource) to connect with. If you're running Debian/Ubuntu, this worked for me: http://www.dogeco.in/wiki/index.php/Dogecoind
 
 Then, install the node-dogecoin NPM package.
 
-`npm install node-dogecoin`
+`npm install node-dogecoindark`
 
 ## Examples
 
 Some code examples follow below, but for more complete examples, see [these snippets](https://github.com/brotchie/dogecoin-code-snippets), or this [wallet app](https://github.com/countable/dogelet) which was created to to test this module.
 
 ```js
-var dogecoin = require('node-dogecoin')()
+var dogecoin = require('node-dogecoindark')()
 
-dogecoin.auth('myusername', 'mypassword')
+dogecoindark.auth('myusername', 'mypassword')
 
-dogecoin.getDifficulty(function() {
+dogecoindark.getDifficulty(function() {
     console.log(arguments);
 })
 
@@ -37,9 +37,9 @@ dogecoin.getDifficulty(function() {
 Pretty much everything is chainable.
 
 ```js
-var dogecoin = require('node-dogecoin')()
+var dogecoindark = require('node-dogecoindark')()
 
-dogecoin
+dogecoindark
 .auth('MyUserName', 'mypassword')
 .getNewAddress()
 .getBalance()
@@ -62,9 +62,9 @@ Executes the given command with optional arguments. Function `callback` defaults
 All of the API commands are supported in lowercase or camelcase. Or uppercase. Anycase!
 
 ```js
-dogecoin.exec('getNewAddress')
+dogecoindark.exec('getNewAddress')
 
-dogecoin.exec('getbalance', function(err, balance) {
+dogecoindark.exec('getbalance', function(err, balance) {
 
 })
 ```
@@ -74,7 +74,7 @@ dogecoin.exec('getbalance', function(err, balance) {
 Accepts either key & value strings or an Object containing settings, returns `this` for chainability.
 
 ```js
-dogecoin.set('host', '127.0.0.1')
+dogecoindark.set('host', '127.0.0.1')
 ```
 
 ### .get(key [string])
@@ -82,7 +82,7 @@ dogecoin.set('host', '127.0.0.1')
 Returns the specified option's value
 
 ```js
-dogecoin.get('user')
+dogecoindark.get('user')
 ```
 
 ### .auth(user [string], pass [string])
@@ -105,7 +105,7 @@ All [Litecoin API](https://litecoin.info/Litecoin_API) commands are supported, i
 <tr>
 <td> addmultisigaddress </td>
 <td> [nrequired] ["key","key"] [account] </td>
-<td> <b>Currently only available on testnet</b> Add a nrequired-to-sign multisignature address to the wallet. Each key is a dogecoin address or hex-encoded public key. If [account] is specified, assign address to [account]. </td>
+<td> <b>Currently only available on testnet</b> Add a nrequired-to-sign multisignature address to the wallet. Each key is a dogecoindark address or hex-encoded public key. If [account] is specified, assign address to [account]. </td>
 <td> N
 </td></tr>
 <tr>
@@ -116,8 +116,8 @@ All [Litecoin API](https://litecoin.info/Litecoin_API) commands are supported, i
 </td></tr>
 <tr>
 <td> dumpprivkey </td>
-<td> [dogecoinaddress] </td>
-<td> Reveals the private key corresponding to <dogecoinaddress< </td>
+<td> [dogecoindarkaddress] </td>
+<td> Reveals the private key corresponding to <dogecoindarkaddress< </td>
 <td> Y
 </td></tr>
 <tr>
@@ -128,14 +128,14 @@ All [Litecoin API](https://litecoin.info/Litecoin_API) commands are supported, i
 </td></tr>
 <tr>
 <td> getaccount </td>
-<td> [dogecoinaddress] </td>
+<td> [dogecoindarkaddress] </td>
 <td> Returns the account associated with the given address. </td>
 <td> N
 </td></tr>
 <tr>
 <td> getaccountaddress </td>
 <td> [account] </td>
-<td> Returns the current dogecoin address for receiving payments to this account. </td>
+<td> Returns the current dogecoindark address for receiving payments to this account. </td>
 <td> N
 </td></tr>
 <tr>
@@ -189,7 +189,7 @@ All [Litecoin API](https://litecoin.info/Litecoin_API) commands are supported, i
 <tr>
 <td> getgenerate </td>
 <td> </td>
-<td> Returns true or false whether dogecoind is currently generating hashes </td>
+<td> Returns true or false whether dogecoindarkd is currently generating hashes </td>
 <td> N
 </td></tr>
 <tr>
@@ -241,7 +241,7 @@ All [Litecoin API](https://litecoin.info/Litecoin_API) commands are supported, i
 <tr>
 <td> getnewaddress </td>
 <td> [account] </td>
-<td> Returns a new dogecoin address for receiving payments.  If [account] is specified (recommended), it is added to the address book so payments received with the address will be credited to [account]. </td>
+<td> Returns a new dogecoindark address for receiving payments.  If [account] is specified (recommended), it is added to the address book so payments received with the address will be credited to [account]. </td>
 <td> N
 </td></tr>
 <tr>
@@ -252,8 +252,8 @@ All [Litecoin API](https://litecoin.info/Litecoin_API) commands are supported, i
 </td></tr>
 <tr>
 <td> getreceivedbyaddress </td>
-<td> [dogecoinaddress] [minconf=1] </td>
-<td> Returns the total amount received by <dogecoinaddress< in transactions with at least [minconf] confirmations. While some might consider this obvious, value reported by this only considers *receiving* transactions. It does not check payments that have been made *from* this address. In other words, this is not "getaddressbalance". Works only for addresses in the local wallet, external addresses will always show 0. </td>
+<td> [dogecoindarkaddress] [minconf=1] </td>
+<td> Returns the total amount received by <dogecoindarkaddress< in transactions with at least [minconf] confirmations. While some might consider this obvious, value reported by this only considers *receiving* transactions. It does not check payments that have been made *from* this address. In other words, this is not "getaddressbalance". Works only for addresses in the local wallet, external addresses will always show 0. </td>
 <td> N
 </td></tr>
 <tr>
@@ -296,7 +296,7 @@ All [Litecoin API](https://litecoin.info/Litecoin_API) commands are supported, i
 </td></tr>
 <tr>
 <td> importprivkey </td>
-<td> [dogecoinprivkey] [label] </td>
+<td> [dogecoindarkprivkey] [label] </td>
 <td> Adds a private key (as returned by dumpprivkey) to your wallet. </td>
 <td> Y
 </td></tr>
@@ -358,7 +358,7 @@ All [Litecoin API](https://litecoin.info/Litecoin_API) commands are supported, i
 </td></tr>
 <tr>
 <td> sendfrom </td>
-<td> [fromaccount] [todogecoinaddress] [amount] [minconf=1] [comment] [comment-to] </td>
+<td> [fromaccount] [todogecoindarkaddress] [amount] [minconf=1] [comment] [comment-to] </td>
 <td> <amount< is a real and is rounded to 8 decimal places. Will send the given amount to the given address, ensuring the account has a valid balance using [minconf] confirmations. Returns the transaction ID if successful (not in JSON object). </td>
 <td> Y
 </td></tr>
@@ -370,13 +370,13 @@ All [Litecoin API](https://litecoin.info/Litecoin_API) commands are supported, i
 </td></tr>
 <tr>
 <td> sendtoaddress </td>
-<td> [dogecoinaddress] [amount] [comment] [comment-to] </td>
+<td> [dogecoindarkaddress] [amount] [comment] [comment-to] </td>
 <td> <amount< is a real and is rounded to 8 decimal places. Returns the transaction ID <txid< if successful. </td>
 <td> Y
 </td></tr>
 <tr>
 <td> setaccount </td>
-<td> [dogecoinaddress] [account] </td>
+<td> [dogecoindarkaddress] [account] </td>
 <td> Sets the account associated with the given address. Assigning address that is already assigned to the same account will create a new address associated with that account. </td>
 <td> N
 </td></tr>
@@ -390,7 +390,7 @@ Generation is limited to [genproclimit] processors, -1 is unlimited. </td>
 </td></tr>
 <tr>
 <td> signmessage </td>
-<td> [dogecoinaddress] [message] </td>
+<td> [dogecoindarkaddress] [message] </td>
 <td> Sign a message with the private key of an address. </td>
 <td> Y
 </td></tr>
@@ -403,13 +403,13 @@ Generation is limited to [genproclimit] processors, -1 is unlimited. </td>
 <tr>
 <td> stop </td>
 <td> </td>
-<td> Stop dogecoin server. </td>
+<td> Stop dogecoindark server. </td>
 <td> N
 </td></tr>
 <tr>
 <td> validateaddress </td>
-<td> [dogecoinaddress] </td>
-<td> Return information about [dogecoinaddress]. </td>
+<td> [dogecoindarkaddress] </td>
+<td> Return information about [dogecoindarkaddress]. </td>
 <td> N
 </td></tr>
 <tr>
@@ -443,19 +443,19 @@ You may pass options to the initialization function or to the `set` method.
 
 ```js
 
-var dogecoin = require('dogecoin')({
+var dogecoin = require('dogecoindark')({
     user:'user'
 })
 
-dogecoin.set('pass', 'somn')
-dogecoin.set({port:22555})
+dogecoindark.set('pass', 'somn')
+dogecoindark.set({port:22555})
 
 ```
 
 Available options and default values:
 
 + host *localhost*
-+ port *22555*
++ port *20102*
 + user
 + pass
 + passphrasecallback
@@ -477,7 +477,7 @@ You may pass an optional function `passphrasecallback` to the `node-dogecoin` in
 You may hard code your passphrase (not recommended) as follows:
 
 ```js
-var dogecoin = require('node-dogecoin')({
+var dogecoindark = require('node-dogecoindark')({
     passphrasecallback: function(command, args, callback) {
         callback(null, 'passphrase', 30);
     }
@@ -494,7 +494,7 @@ var rl = readline.createInterface({
   output: process.stdout
 })
 
-var dogecoin = require('node-dogecoin')({
+var dogecoindark = require('node-dogecoindark')({
   passphrasecallback: function(command, args, callback) {
     rl.question('Enter passphrase for "' + command + '" operation: ', function(passphrase) {
       if (passphrase) {
@@ -509,20 +509,20 @@ var dogecoin = require('node-dogecoin')({
 
 ### Secure RPC with SSL
 
-By default `dogecoind` exposes its JSON-RPC interface via HTTP; that is, all RPC commands are transmitted in plain text across the network! To secure the JSON-RPC channel you can supply `dogecoind` with a self-signed SSL certificate and an associated private key to enable HTTPS. For example, in your `dogecoin.conf`:
+By default `dogecoindarkd` exposes its JSON-RPC interface via HTTP; that is, all RPC commands are transmitted in plain text across the network! To secure the JSON-RPC channel you can supply `dogecoindarkd` with a self-signed SSL certificate and an associated private key to enable HTTPS. For example, in your `dogecoindark.conf`:
 
     rpcssl=1
-    rpcsslcertificatechainfile=/etc/ssl/certs/dogecoind.crt
-    rpcsslprivatekeyfile=/etc/ssl/private/dogecoind.pem
+    rpcsslcertificatechainfile=/etc/ssl/certs/DogeCoinDarkd.crt
+    rpcsslprivatekeyfile=/etc/ssl/private/dogecoindarkd.pem
 
-In order to securely access an SSL encrypted JSON-RPC interface you need a copy of the self-signed certificate from the server: in this case `dogecoind.crt`. Pass your self-signed certificate in the `ca` option and set `https: true` and node-dogecoin is secured!
+In order to securely access an SSL encrypted JSON-RPC interface you need a copy of the self-signed certificate from the server: in this case `dogecoindarkd.crt`. Pass your self-signed certificate in the `ca` option and set `https: true` and node-dogecoin is secured!
     
 ```js
 var fs = require('fs')
 
-var ca = fs.readFileSync('dogecoind.crt')
+var ca = fs.readFileSync('dogecoindarkd.crt')
 
-var dogecoin = require('node-dogecoin')({
+var dogecoin = require('node-dogecoindark')({
   user: 'rpcusername',
   pass: 'rpcpassword',
   https: true,
@@ -535,14 +535,12 @@ var dogecoin = require('node-dogecoin')({
 ```
 npm install -g nodeunit
 
-nodeunit test/test-node-dogecoin.js
+nodeunit test/test-node-dogecoindark.js
 ```
 
-## Bounties
+## Bug Reports
 
-[Dogecoin](http://www.dogecoin.com) donation address is DE4isu3m2RBma7nGEwnaX8cu4Y2m2J2g8Q
-
-Donations in [dogecoin](http://www.dogecoin.com) will be used for bounties. The first bounty will be awarded for creating a unit test suite. As a side note: I encourage all GitHub repository owners to post a donation address so their community can easily support development financially. If you accept donations at your repository, [I'll send you a reward!](http://www.reddit.com/r/dogecoindev/comments/203ojs/add_a_dogecoin_donation_link_in_your_github_repo/)
+please report bugs, and write a message if you have suggestions before making pull requests please =]
 
 
 
