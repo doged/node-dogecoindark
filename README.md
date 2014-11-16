@@ -50,7 +50,7 @@ dogecoindark
 The [Litecoin API](https://litecoin.info/Litecoin_API) is supported as direct methods. Use either camelcase or lowercase.
 
 ```js
-dogecoin.getNewAddress(function(err, address) {
+dogecoindark.getNewAddress(function(err, address) {
     this.validateaddress(address, function(err, info) {
 
     })
