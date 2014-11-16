@@ -17,7 +17,7 @@ options = {
       https: true,
       ca: ca
     };
-var dogecoin = require('../lib/dogecoin')(options);
+var dogecoin = require('../lib/dogecoindark')(options);
 
 exports.get = function (test) {
 	var options_keys = Object.keys(options);
@@ -33,7 +33,7 @@ exports.get = function (test) {
 
 	var idx = 0;
 	for(var propt in options){
-		test.deepEqual(dogecoin.get(''+options_keys[idx]), options[''+propt]);
+		test.deepEqual(dogecoindark.get(''+options_keys[idx]), options[''+propt]);
 		idx ++;
 	}
 	
@@ -62,8 +62,8 @@ exports.set = function (test) {
 
 	var idx = 0;
 	for(var propt in new_options){
-		dogecoin.set(''+options_keys[idx], new_options[ ''+options_keys[idx] ]);
-		test.deepEqual(dogecoin.get(''+options_keys[idx]), new_options[''+propt]);
+		dogecoindark.set(''+options_keys[idx], new_options[ ''+options_keys[idx] ]);
+		test.deepEqual(dogecoindark.get(''+options_keys[idx]), new_options[''+propt]);
 		idx ++;
 	}
 	test.done();
