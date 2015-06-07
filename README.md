@@ -542,5 +542,4 @@ nodeunit test/test-node-dogecoindark.js
 
 please report bugs, and write a message if you have suggestions before making pull requests please =]
 
-
-
+[![Visit our IRC Chat!](https://kiwiirc.com/buttons/irc.freenode.net/dogecoindark.png)](https://kiwiirc.com/client/irc.freenode.net/?nick=doged|?&theme=cli#dogecoindark)
